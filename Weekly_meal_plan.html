@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<title>MealTime :: Weekly Meal Plan</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<head>
+  <title>MealTime :: Grocery List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <div id="wrapper">
-<h1>
-  <a href="index.html">MealTime</a>
-</h1>
-<nav>
-    <ul>
-    <li><a href="index.html">Home</a></li> 
-        <li><a href="recipes.html">Recipes</a></li> 
-        <li><a href="Weekly_meal_plan.html">Weekly Meal Plan</a></li> 
-        <li><a href="calendar.html">Calendar</a></li> 
+  <div id="wrapper">
+    <h1>
+      <a href="index.html">MealTime</a>
+    </h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="Grocerylist.html">Grocery List</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
         <li><a href="profile.html">Profile</a></li>
-    </ul>
-</nav>
-<main>
-    <p> This is where you will build out your weekly meal plans once your recipes are selected / make a grocery list.</p>
+      </ul>
+    </nav>
+
+    <main>
+      <p>This is where you will build out your weekly grocery list.</p>
+    
+   <div class="grocery-container">
+    <h2>Grocery List</h2>
+
+    <input type="text" id="groceryInput" placeholder="Enter grocery item">
+    <button type="button" onclick="addItem()">Add</button>
+
+    <ul id="groceryList"></ul>
+  </div>
+
+  <script>
+  function addItem() {
+    const input = document.getElementById("groceryInput");
+    const itemText = input.value.trim();
+
+    if (itemText === "") {
+      alert("Please enter an item.");
+      return;
+    }
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("span");
+    span.textContent = itemText;
+
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Delete";
+    removeButton.onclick = function () {
+      li.remove();
+    };
+
+    li.appendChild(span);
+    li.appendChild(removeButton);
+
+    document.getElementById("groceryList").appendChild(li);
+
+    input.value = "";
+  }
+</script>
+</body>
+</html>
