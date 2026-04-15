@@ -14,7 +14,7 @@
     <ul>
     <li><a href="index.html">Home</a></li> 
         <li><a href="recipes.html">Recipes</a></li> 
-        <li><a href="Weekly_meal_plan.html">Weekly Meal Plan</a></li> 
+        <li><a href="grocerylist.html">Grocery List</a></li> 
         <li><a href="calendar.html">Calendar</a></li> 
         <li><a href="profile.html">Profile</a></li>
     </ul>
@@ -56,3 +56,11 @@
 <h3>
     <a href="https://www.spendwithpennies.com/easy-chicken-fajitas/#wprm-recipe-container-122354">Original Recipe</a>
 </h3>
+<button onclick="addToMealPlan('Chicken Fajitas')">Add to Weekly Plan</button>
+
+  <script>
+    function addToMealPlan(mealName) {
+      localStorage.setItem("selectedMeal", mealName);
+      window.location.href = "Weekly_meal_plan.html";
+    }
+  </script>
