@@ -106,6 +106,12 @@ h3 {
     font-family: Georgia, 'Times New Roman', serif;
     color: #290033;
 }
+p {
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #030303;
+    line-height: 1.6;
+}
 ol {
     list-style: number;
 }
@@ -115,7 +121,7 @@ ol {
   flex-wrap: wrap;
 }
 .box {
-  width: 30%;
+  width: 20%;
   background-color: #ffffff;
   padding: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -146,21 +152,66 @@ footer {
     padding: 2em;
     background-color: #FFFFFF;
 }
-#form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-#contact {
-    font-size: 100%;
-    text-align: center;
-    color: #a833cc; 
+.contact-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  height: 100vh;
 }
 
-.resort {
-    color: #a419d2;
-    font-weight: bold;
+.left-panel {
+  width: 32%;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
 }
+
+.right-panel {
+  width: 68%;
+  height: 100vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box {
+  width: 200px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 120px;
+}
+
 table {
     border: 2px solid #a833cc;
     border-collapse: collapse;
@@ -183,13 +234,6 @@ input[type="text"] {
 tr:nth-of-type(odd) {
     background-color: #F5FAFC;
 }
-video {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    padding-left: 8px;
-}
 textarea, input {
     margin-bottom: .5em;
 }
@@ -203,6 +247,7 @@ textarea, input {
   width: 220px;
   padding: 4px;
   display: inline-block;
+  text-align: center;
 }
 
 button {
@@ -225,6 +270,22 @@ button {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+}
+#contact {
+    text-align: center;
+}
+.aboutme {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.video {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 12px;
 }
 @media (min-width: 600px) {
     nav ul {
@@ -257,6 +318,11 @@ button {
     [type="submit"] {
         grid-column: 2;
         width: 9em;
+    }
+}
+@media (max-width: 800px) {
+    .video {
+        display: none;
     }
 }
 
@@ -307,3 +373,4 @@ button {
         }
     }
 }
+ 
